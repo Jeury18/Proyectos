@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de socios</title>
+    <link rel="stylesheet" href="/estilos/ImpLisSoc.css">
+</head>
+<body>
+    <h1>Lista de socios</h1>
+    <input class="boton" type="button" onclick="history.back()" name="volver atrás" value="Volver atrás">
+    <div class="ImpLisSocio">
+        <form class="formulario" action="">
+            <div class="input-contenedor">
+                <br>
+                <label for="socio">Socio</label>
+                <input type="text" id="socio" name="socio" placeholder="Socio">
+                <br>
+                <br>
+                <label for="estado">Estado</label>
+                <select name="estado" id="estado">
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
+                <br>
+                <br>
+                <hr>
+                <button id="btn_imprimir" class="button" name="btn_imprimir" type="submit">Imprimir</button> 
+            </div>
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>

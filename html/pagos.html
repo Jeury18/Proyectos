@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos</title>
+    <link rel="stylesheet" href="/estilos/pagos.css">
+</head>
+<body>
+    <h1>Pagos</h1>
+    <input class="boton" type="button" onclick="history.back()" name="volver atrás" value="Volver atrás">
+    <div class="pagos">
+    <form class="formulario" action="pagos1.php" method="POST">
+        <div class="input-contenedor">
+        <br>
+        <label for="numero">Numero</label>
+        <input type="number" name="numero" id="numero" placeholder="Numero">
+        <label for="fecha">Fecha</label>
+        <input type="date" name="fecha" id="fecha">
+        <br>
+        <br>
+        <label for="socio">Socio</label>
+        <input type="number" name="socio" id="socio" placeholder="Socio">
+        <br>
+        <br>
+        <br>
+        <label style="color: red;">Plan</label>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <label for="efectivo">Efectivo</label>
+        <input type="text" name="efectivo" id="efectivo" placeholder="Efectivo">
+        
+        <br>
+        <br>
+        <label for="cheque">Cheque</label>
+        <input type="text" name="cheque" id="cheque" placeholder="Cheque">
+        <label for="pendiente">Pendiente</label>
+        <input type="text" name="pendiente" id="pendiente" placeholder="Pendiente">
+        <br>
+        <br>
+        <label for="tarjeta">Tarjeta</label>
+        <input type="text" name="tarjeta" id="tarjeta" placeholder="Tarjeta">
+        <label for="vencido">Vencido</label>
+        <input type="text" name="vencido" id="vencido" placeholder="Vencido">
+        <br>
+        <br>
+        <hr>
+        <br>
+        <label for="total">Total</label>
+        <input type="text" name="total" id="total" placeholder="Total">
+        <br>
+        <br>
+        <hr>
+        <button class="button" id="cobrar" name="cobrar" type="submit">Cobrar Todo</button>
+    </div>
+    </form>
+</div>
+<script>
+    function validacion() {
+
+let numero = document.getElementById("numero").value;
+let fecha = document.getElementById("fecha").value;
+let socio = document.getElementById("socio").value;
+let efectivo = document.getElementById("efectivo").value;
+let cheque = document.getElementById("cheque").value;
+let pendiente = document.getElementById("pendiente").selectedIndex;
+let tarjeta = document.getElementById("tarjeta").value;
+let vencido = document.getElementById("vencido").value;
+let total = document.getElementById("total").value;
+
+if (numero == null || numero == "") {
+// Si no se cumple la condicion...
+window.alert('EL NUMERO ESTA VACIO.....');
+return false;
+}else if(fecha == null || fecha == ""){
+    alert('LA FECHA ESTA VACIA......');
+    return false;
+}else if(socio == null || socio == ""){
+    alert('EL SOCIO ESTA VACIO......');
+    return false;
+}else if(efectivo == null || efectivo == ""){
+    alert('EL EFECTIVO ESTA VACIO......');
+    return false;
+}else if(cheque == null || cheque == 0){
+    alert('EL CHEQUE ESTA VACIO......');
+    return false;
+}else if(pendiente == null || pendiente == ""){
+    alert('EL PENDIENTE ESTA VACIA......');
+    return false;
+}else if(tarjeta == null || tarjeta == ""){
+    alert('LA TARJETA ESTA VACIO......');
+    return false;
+}else if(vencido == null || vencido == ""){
+    alert('LA CAMPO VENCIDO ESTA VACIA......');
+    return false;
+}else if(total == null || total == ""){
+    alert('EL CAMPO TOTAL ESTA VACIO......');
+    return false;
+}
+
+return true;
+}
+
+  </script>
+</body>
+</html>

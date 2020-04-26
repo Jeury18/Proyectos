@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargos</title>
+    <link rel="stylesheet" href="/estilos/Cargos.css">
+</head>
+<body>
+    <h1>Cargos</h1>
+    <input class="boton" type="button" onclick="history.back()" name="volver atrás" value="Volver atrás">
+    <div class="cargos">
+    <form class="formulario" action="cargos1.php" method="POST">
+        <div class="input-contenedor">
+        <br>
+        <label for="numero">Numero</label>
+        <input type="number" name="numero" id="numero" placeholder="Numero">
+        <label for="socio">Socio</label>
+        <input type="number" name="socio" id="socio" placeholder="Socio">
+        <br>
+        <br>
+        <label for="cargo">Cargo</label>
+        <select name="cargo" id="cargo">
+            <option value="0">Entrenador de pesas</option>
+            <option value="1">Entrenador de baile</option>
+            <option value="2">Area de limpieza</option>
+        </select>
+        <label for="concepto">Concepto</label>
+        <input type="text" name="concepto" id="concepto" placeholder="Concepto">
+        <br>
+        <br>
+        <label for="valor">Valor</label>
+        <input type="text" name="valor" id="valor" placeholder="valor">
+        <label for="balance">Balance</label>
+        <input type="text" name="balance" id="balance" placeholder="Balance">
+        <br>
+        <br>
+        <label style="color: red;" >Vencimiento</label>
+        <hr>
+        <br>
+        <label for="vence">Vence</label>
+        <input type="date" name="vence" id="vence">
+        <br>
+        <br>
+        <label for="comentarios">Comentario</label>
+        <textarea name="comentarios" id="comentarios" placeholder="Comentario"></textarea>
+        <br>
+        <br>
+        <hr>
+        <button id="btn_cargo" class="button" name="btn_cargo" type="submit">Guardar</button> 
+    </div>
+    </form>
+</div>
+
+<script>
+    function validacion() {
+
+let numero = document.getElementById("numero").value;
+let socio = document.getElementById("socio").value;
+let cargo = document.getElementById("cargo").value;
+let concepto = document.getElementById("concepto").value;
+let valor = document.getElementById("valor").value;
+let balance = document.getElementById("balance").selectedIndex;
+let vence = document.getElementById("vence").value;
+let comentarios = document.getElementById("comentarios").value;
+
+
+
+if (numero == null || numero == "") {
+// Si no se cumple la condicion...
+window.alert('EL NUMERO ESTA VACIO.....');
+return false;
+}else if(socio == null || socio == ""){
+    alert('EL SOCIO ESTA VACIA......');
+    return false;
+}else if(cargo == null || cargo == ""){
+    alert('EL CARGO ESTA VACIO......');
+    return false;
+}else if(concepto == null || concepto == ""){
+    alert('EL CONCEPTO ESTA VACIO......');
+    return false;
+}else if(valor == null || valor == 0){
+    alert('EL VALOR ESTA VACIO......');
+    return false;
+}else if(balance == null || balance == ""){
+    alert('EL BALANCE ESTA VACIA......');
+    return false;
+}else if(vence == null || vence == ""){
+    alert('EL VENCIMIENTO ESTA VACIO......');
+    return false;
+}
+return true;
+}
+
+  </script>
+</body>
+</html>

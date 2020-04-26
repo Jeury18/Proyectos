@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos adicionales</title>
+    <link rel="stylesheet" href="/estilos/datosAdicionales.css">
+</head>
+<body>
+    <h1>Datos adicionales</h1>
+    <input class="boton" type="button" onclick="history.back()" name="volver atrás" value="Volver atrás">
+    <div class="datos">
+    
+    <form class="formulario" action="DatosAdicionales1.php" method="POST">
+        <h2>Contacto</h2>
+        <div class="input-contenedor">
+          
+        <br>
+        <label for="id">Socio</label>
+        <input type="number" name="id" id="id" placeholder="Id del Socio">
+        <br>
+        <br>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+        <br>
+        <br>
+        <label for="email">Direccion</label>
+        <input type="email" name="email" id="email" placeholder="Direccion">
+        <br>
+        <br>
+        <label for="telefono">Telefono</label>
+        <input type="number" name="telefono" id="telefono" placeholder="Numero Telefonico">
+        <br>
+        <br>
+        <label for="comentario">Comentario</label>
+        <textarea name="comentario" id="comentario" placeholder="Alguna observacion"></textarea>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <label>Control de acceso</label>
+        <br>
+        <br>
+        <label for="monto">Monto</label>
+        <input type="text" id="monto" name="monto" placeholder="Monto" >
+        <br>
+        <br>
+        <hr>
+        <button class="button" id="btn_datos" name="btn_datos" type="submit">Guardar</button> 
+        <button class="button" id="buscar" name="buscar" type="submit">Buscar</button>
+    </div>
+    </form>
+</div>
+<script>
+    function validacion() {
+
+let id = document.getElementById("id").value;
+let nombre = document.getElementById("nombre").value;
+let email = document.getElementById("email").value;
+let telefono = document.getElementById("telefono").value;
+let comentario = document.getElementById("comentario").value;
+let monto = document.getElementById("monto").selectedIndex;
+
+if (id == null || id == "") {
+// Si no se cumple la condicion...
+window.alert('EL CODIGO ESTA VACIO.....');
+return false;
+}else if(nombre == null || nombre == ""){
+    alert('EL NOMBRE ESTA VACIA......');
+    return false;
+}else if(email == null || email == ""){
+    alert('EL EMAIL ESTA VACIO......');
+    return false;
+}else if(telefono == null || telefono == ""){
+    alert('EL TELEFONO ESTA VACIO......');
+    return false;
+}else if(comentario == null || comentario == 0){
+    alert('EL COMENTARIO ESTA VACIO......');
+    return false;
+}else if(monto == null || monto == ""){
+    alert('EL MONTO ESTA VACIA......');
+    return false;
+}
+return true;
+}
+
+  </script>
+</body>
+</html>
+

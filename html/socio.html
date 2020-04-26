@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socios</title>
+    <link rel="stylesheet" href="/estilos/socios.css">
+</head>
+<body>
+   
+    <h1>Socios</h1>
+    <input class="boton" type="button" onclick="history.back()" name="volver atrás" value="Volver atrás">
+    <div class="socio">
+    <form class="formulario" method="POST" action="socio1.php" id="formulario" name="formulario" onsubmit="return validacion()">
+    
+        <div class="input-contenedor">
+   <br>
+   <br>
+   <label for="codigo_cliente">Codigo</label>
+   <input type="number" name="codigo_cliente" id="codigo_cliente" placeholder="Codigo">
+   <label for="fecha">Fecha</label>
+   <input type="date" name="fecha" id="fecha">
+   <br>
+   <br>
+   <label for="nombres">Nombre</label>
+   <input type="text" name="nombres" id="nombres" placeholder="Nombre">
+   <label for="apellidos">Apellido</label>
+   <input type="text" name="apellidos" id="apellidos" placeholder="Apellido">
+   <br>
+   <br>
+   <label for="sexo">Sexo</label>
+   <select name="sexo" name="sexo" id="sexo">
+       <option value="0">Masculino</option>
+       <option value="1">Femenino</option>
+   </select>
+   <label for="cedula">Cedula</label>
+   <input type="number" name="cedula" id="cedula" placeholder="Cedula">
+   <br>
+   <br>
+   <label for="planF">Plan Factura</label>
+   <select name="planF" id="planF">
+       <option value="InsMen">Inscripcion y mensualidad</option>
+       <option value="Ins">Inscripcion</option>
+       <option value="Men">Mensualidad</option>
+   </select>
+   <label for="fec_nac">Fecha de Nac.</label>
+   <input type="date" name="fec_nac" id="fec_nac">
+   <br>
+   <br>
+   <label for="estado">Estado</label>
+   <select name="estado" id="estado">
+       <option value="activo">Activo</option>
+       <option value="inactivo">Inactivo</option>
+   </select>
+   <br>
+   <br>
+   <label for="ciudad">Ciudad</label>
+   <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad">
+   <label for="sector">Sector</label>
+   <input type="text" name="sector" id="sector" placeholder="Sector">
+   <br>
+   <br>
+   <label for="calle">Calle</label>
+   <input type="text" name="calle" id="calle" placeholder="Calle">
+   <label for="numero">Numero</label>
+   <input type="number" name="numero" id="numero" placeholder="Numero">
+   <br>
+   <br>
+   <label for="tel">Telefono/Celular</label>
+   <input type="number" name="tel" id="tel" placeholder="Telefono">
+   <label for="email">Correo</label>
+   <input type="email" name="email" id="email" placeholder="Correo Electronico">
+   <br>
+   <br>
+   <br>
+   <hr>
+   <br>
+   <label for="cuota">Cuota por excepcion</label>
+   <input type="checkbox" name="cuota" id="cuota">
+   <label for="valido_hasta">Fecha valida</label>
+   <input type="date" name="valido_hasta" id="valido_hasta">
+   <br>
+   <br>
+   <hr>
+   <button id="btn_socio" class="button" name="btn_socio" type="submit">Guardar</button> 
+</div>   
+</form>
+</div>
+<script>
+    function validacion() {
+
+let codigo = document.getElementById("codigo").value;
+let fechaNac = document.getElementById("fechaNac").value;
+let fecha = document.getElementById("fechaNac").value;
+let nombre = document.getElementById("nombre").value;
+let apellido = document.getElementById("apellido").value;
+let sexo = document.getElementById("sexo").selectedIndex;
+let cedula = document.getElementById("cedula").value;
+let plan = document.getElementById("plan").value;
+let sector = document.getElementById("sector").value;
+let estado = document.getElementById("estado").value;
+let ciudad = document.getElementById("ciudad").value;
+let calle = document.getElementById("calle").value;
+let numero = document.getElementById("numero").value;
+let telefono = document.getElementById("telefono").value;
+let email = document.getElementById("email").value;
+let cuota = document.getElementById("cuota").value;
+let FecVal = document.getElementById("FecVal").value;
+
+
+if (codigo == null || codigo == "") {
+// Si no se cumple la condicion...
+window.alert('EL CODIGO ESTA VACIO.....');
+return false;
+}else if(fecha == null || fecha == ""){
+    alert('LA FECHA ESTA VACIA......');
+    return false;
+}else if(nombre == null || nombre == ""){
+    alert('EL NOMBRE ESTA VACIO......');
+    return false;
+}else if(apellido == null || apellido == ""){
+    alert('EL APELLIDO ESTA VACIO......');
+    return false;
+}else if(sexo == null || sexo == 0){
+    alert('EL SEXO ESTA VACIO......');
+    return false;
+}else if(cedula == null || cedula == ""){
+    alert('LA CEDULA ESTA VACIA......');
+    return false;
+}else if(plan == null || plan == ""){
+    alert('EL PLAN FACTURA ESTA VACIO......');
+    return false;
+}else if(fechaNac == null || fechaNac == ""){
+    alert('LA FECHA DE NACIMIENTO ESTA VACIA......');
+    return false;
+}else if(estado == null || estado == ""){
+    alert('EL ESTADO ESTA VACIO......');
+    return false;
+}else if(ciudad == null || ciudad == ""){
+    alert('LA CIUDAD ESTA VACIA......');
+    return false;
+}else if(sector == null || sector == ""){
+    alert('EL SECTOR ESTA VACIO......');
+    return false;
+}else if(calle == null || calle == ""){
+    alert('LA CALLE ESTA VACIA......');
+    return false;
+}else if(numero == null || numero == ""){
+    alert('EL NUMERO ESTA VACIO......');
+    return false;
+}else if(telefono == null || telefono == ""){
+    alert('EL TELEFONO ESTA VACIO......');
+    return false;
+}else if(email == null || email == ""){
+    alert('EL CORREO ELECTRONICO ESTA VACIO......');
+    return false;
+}else if(FecVal == null || FecVal == ""){
+    alert('LA FECHA DE VALIDACION ESTA VACIA......');
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+return true;
+}
+
+  </script>
+</body>
+</html>
+
+
+
+

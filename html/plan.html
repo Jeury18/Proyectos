@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan y tipo de pago</title>
+    <link rel="stylesheet" href="/estilos/plan.css">
+</head>
+<body>
+    <h1>Plan/Tipo de pago</h1>
+    <input class="boton" type="button" onclick="history.back()" name="volver atrás" value="Volver atrás">
+    <div class="plan">
+    <form class="formulario" action="plan1.php" method="POST">
+        <div class="input-contenedor">
+        <br>
+        <label for="id">Codigo</label>
+        <input type="number" name="id" id="id" placeholder="Codigo">
+        <br>
+        <br>
+        <label for="descripcion">Descripcion</label>
+        <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion">
+        <br>
+        <br>
+        <label style="color:crimson;" >Vencimiento</label>
+        <hr>
+        <br>
+        <label for="cantidad">Cantidad</label>
+        <input type="text" name="cantidad" id="cantidad" placeholder="Cantidad">
+        <label for="periodo">Periodo</label>
+        <select name="periodo" name="periodo" id="periodo">
+            <option value="0">Anual</option>
+            <option value="1">Mensual</option>
+            <option value="2">Semanal</option>
+        </select>
+        <br>
+        <br>
+        <label for="precio">Precio</label>
+        <input type="number" name="precio" id="precio" placeholder="Precio">
+        <label for="descuento">Descuento</label>
+        <input type="text" name="descuento" id="descuento" placeholder="Descuento">
+        <br>
+        <br>
+        <label style="color:crimson;">Inscripcion</label>
+        <hr>
+        <br>
+        <label for="precio_inc">Precio</label>
+        <input type="text" name="precio_inc" id="precio_inc" placeholder="Precio">
+        <br>
+        <br>
+        <label style="color:crimson;">Vencimiento</label>
+        <br>
+        <br>
+        <label for="cantidad_ven">Cantidad</label>
+        <input type="text" name="cantidad_ven" id="cantidad_ven" placeholder="Cantidad">
+        <label for="periodo_ven">Periodo</label>
+        <select name="periodo_ven" id="periodo_ven">
+            <option value="0">Anual</option>
+            <option value="1">Mensual</option>
+            <option value="2">Semanal</option>
+        </select>
+        <br>
+        <br>
+        <hr>
+        <button id="btn_plan" class="button" name="btn_plan" type="submit">Guardar</button> 
+    </div>
+    </form>
+</div>
+
+<script>
+    function validacion() {
+
+let id = document.getElementById("id").value;
+let descripcion = document.getElementById("descripcion").value;
+let cantidad = document.getElementById("cantidad").value;
+let periodo = document.getElementById("periodo").value;
+let precio = document.getElementById("precio").value;
+let descuento = document.getElementById("descuento").selectedIndex;
+let precio_inc = document.getElementById("precio_inc").value;
+let cantidad_ven = document.getElementById("cantidad_ven").value;
+let periodo_ven = document.getElementById("periodo_ven").value;
+
+
+
+if (id == null || id == "") {
+// Si no se cumple la condicion...
+window.alert('EL CODIGO ESTA VACIO.....');
+return false;
+}else if(descripcion == null || descripcion == ""){
+    alert('LA DESCRIPCION ESTA VACIA......');
+    return false;
+}else if(cantidad == null || cantidad == ""){
+    alert('LA CANTIDAD ESTA VACIO......');
+    return false;
+}else if(periodo == null || periodo == ""){
+    alert('EL PERIODO ESTA VACIO......');
+    return false;
+}else if(precio == null || precio == 0){
+    alert('EL PRECIO ESTA VACIO......');
+    return false;
+}else if(descuento == null || descuento == ""){
+    alert('EL DESCUENTO ESTA VACIA......');
+    return false;
+}else if(precio_inc == null || precio_inc == ""){
+    alert('EL PRECIO INC ESTA VACIO......');
+    return false;
+}else if(cantidad_ven == null || cantidad_ven == ""){
+    alert('LA CANTIDAD VEN ESTA VACIA......');
+    return false;
+}else if(periodo_ven == null || periodo_ven == ""){
+    alert('EL PERIODO VEN ESTA VACIO......');
+    return false;
+}
+
+return true;
+}
+
+  </script>
+</body>
+</html>

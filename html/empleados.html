@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+    <link rel="stylesheet" href="/estilos/empleado.css">
+</head>
+<body>
+    <h1>Empleados</h1>
+    <input class="boton" type="button" onclick="history.back()" name="volver atrás" value="Volver atrás">
+    <div class="empleados">
+    <form class="formulario" action="empleados.php" method="POST">
+
+        <div class="input-contenedor">
+        <br>
+        <label for="id">Codigo</label>
+        <input type="number" name="id" id="id" placeholder="Codigo">
+        <br>
+        <br>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+        <br>
+        <br>
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+        <br>
+        <br>
+        <label for="Sexo">Sexo</label>
+        <select name="sexo" id="sexo">
+            <option value="0">Masculino</option>
+            <option value="1">Femenino</option>
+        </select>
+        <br>
+        <br>
+        <label for="email">Correo</label>
+        <input type="email" name="email" id="email" placeholder="Correo electronico">
+        <br>
+        <br>
+        <label for="estado">Estado</label>
+        <input type="checkbox" name="estado" id="estado">
+        <br>
+        <br>
+        <hr>
+        <button id="btn_empleado" class="button" name="btn_empleado" type="submit">Guardar</button>  
+    </div>
+    </form>
+</div>
+<script>
+    function validacion() {
+
+let id = document.getElementById("id").value;
+let nombre = document.getElementById("nombre").value;
+let apellido = document.getElementById("apellido").value;
+let sexo = document.getElementById("sexo").value;
+let email = document.getElementById("email").value;
+let estado = document.getElementById("estado").selectedIndex;
+
+
+if (id == null || id == "") {
+// Si no se cumple la condicion...
+window.alert('EL CODIGO ESTA VACIO.....');
+return false;
+}else if(nombre == null || nombre == ""){
+    alert('EL NOMBRE ESTA VACIA......');
+    return false;
+}else if(apellido == null || apellido == ""){
+    alert('EL APELLIDO ESTA VACIO......');
+    return false;
+}else if(sexo == null || sexo == ""){
+    alert('EL SEXO ESTA VACIO......');
+    return false;
+}else if(email == null || email == 0){
+    alert('EL EMAIL ESTA VACIO......');
+    return false;
+}
+return true;
+}
+
+  </script>
+</body>
+</html>

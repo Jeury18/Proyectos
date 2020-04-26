@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate</title>
+    <link  rel="stylesheet" href="/estilos/login.css">
+   <link rel="stylesheet" href="/css/all.min.css">
+    </head>
+    
+<body>
+    
+<form class="formulario" action="registrar.php" method="POST" name="formulario" id="formulario" onsubmit="return validacion()">
+
+
+<h1>Registrate</h1>
+<div class="contenedor">
+
+    <div class="input-contenedor">
+     <i class="fas fa-user icon"></i>
+     <input type="text" name="usuario" id="usuario" placeholder="Usuario">
+     <br>
+     
+
+    </div>
+
+    <div class="input-contenedor">
+        <i class="fas fa-envelope icon"></i>
+        <input type="email" name="email" id="email" placeholder="Correo Electronico">
+        <br>
+       
+   
+       </div>
+
+       <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+        <input type="password" name="clave" id="clave" placeholder="Contraseña nuevamente">
+        <br>
+        
+   
+       </div>
+       <input  type="submit" class="button" >Registrate</input>
+       <p>¿Ya tienes una cuenta?</p><a class="link" href="index.html">Iniciar sesion</a>
+</div>
+</form>
+<script>
+       function validacion() {
+   
+   let usuario = document.getElementById("usuario").value;
+   let email = document.getElementById("email").value;
+   let clave = document.getElementById("clave").value;
+
+
+ if (usuario == null || usuario == "") {
+   // Si no se cumple la condicion...
+   window.alert('EL USUARIO ESTA VACIO.....');
+   return false;
+ }else if(email== null || email == ""){
+         alert('EL CORREO ELECTRONICO ESTA VACIO......');
+         return false;
+ }else if(clave == null || clave == ""){
+         alert('LA CLAVE ESTA VACIA......');
+         return false;
+ }
+ 
+ 
+ return true;
+}
+
+    
+</script>
+
+</body>
+</html>
